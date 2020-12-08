@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Додавання користувача</h1>
+    <form th:action=${'/add_user'} th:method="post">
+        <input type="text" name="name" placeholder="Введіть нікнейм " class="form-control"><br>
+        <input type="text" name="password" placeholder="Введіть пароль" class="form-control"><br>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type="submit" class="btn btn-success">Додати користувача</button>
+    </form>
+</div>
+
+</body>
+</html>

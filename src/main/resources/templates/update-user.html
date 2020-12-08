@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Редагування користувача</h1>
+    <form th:action=${'/update_user'} th:method="post">
+        <input type="text" name="oldName" placeholder="Введіть старий нікнейм " class="form-control"><br>
+        <input type="text" name="newName" placeholder="Введіть новий нікнейм " class="form-control"><br>
+        <input type="text" name="newPassword" placeholder="Введіть новий пароль" class="form-control"><br>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <button type="submit" class="btn btn-success">Відредагувати користувача</button>
+    </form>
+</div>
+</body>
+</html>
