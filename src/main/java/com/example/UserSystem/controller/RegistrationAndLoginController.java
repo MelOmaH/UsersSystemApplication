@@ -26,22 +26,5 @@ public class RegistrationAndLoginController {
         model.addAttribute("title", "Форма реєстрації");
         return "registration-form";
     }
-//
-//    @PostMapping("/registration")
-//
-//    public String addUser(User user, Map<String, Object> model) {
-//        User userFromDB = userRepository.findByUsername(user.getUsername());
-//
-//        if (userFromDB !=null){
-//            model.put("message", "User exist!");
-//            return "registration-form";
-//        }
-//
-//        user.setActive(true);
-//        user.setRoles(Collections.singleton(Role.USER));
-//        userRepository.save(user);
-//
-//        return "redirect:/login";
-//    }
 }
 
